@@ -16,6 +16,11 @@ server.listen(3000);
 // Listen any client connect to server
 io.on("connection", function(socket){
     console.log("connected "+socket.id);
+
+    // Check disconnect
+    socket.on("disconnect", function(){
+        console.log(socket.id+" disconnected");
+    });
 });
 
 app.get("/", function(req, res){
