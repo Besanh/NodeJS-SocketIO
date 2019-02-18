@@ -15,7 +15,7 @@ server.listen(3000);
 
 // Listen any client connect to server
 io.on("connection", function(socket){
-    console.log("connected");
+    console.log("connected "+socket.id);
 });
 
 app.get("/", function(req, res){
