@@ -11,12 +11,21 @@
         var socket = io("http://localhost:3000");
     </script>
     <script>
+        socket.on("Server-send-data", function(data){
+            $("#noidung").append(data+", ");
+        });
         $(document).ready(function(){
-            //alert("ok");
+            $("#mrA").click(function(){
+                // emit(ten gui len socket, gia tri gui qua client B)
+                socket.emit("Client-send-data", "Hello");
+            });
         });
     </script>
 </head>
 <body>
-    Hello
+    <div id="mrA">
+        Click send
+    </div>
+    <h2 id="noidung"></h2>
 </body>
 </html>
