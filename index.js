@@ -21,6 +21,15 @@ io.on("connection", function(socket){
     socket.on("disconnect", function(){
         console.log(socket.id+" disconnected");
     });
+
+    /**
+     *  Listen client send data to server
+     * Server send data to all clien(include A)
+    */
+    socket.on("Client-send-data", function(data){
+        console.log(data);
+        io.sockets.emit("Server-send-data", data+"777");
+    });
 });
 
 app.get("/", function(req, res){
