@@ -24,11 +24,16 @@ io.on("connection", function(socket){
 
     /**
      *  Listen client send data to server
-     * Server send data to all clien(include A)
+     * Server send data to all client(include A)
     */
     socket.on("Client-send-data", function(data){
         console.log(data);
-        io.sockets.emit("Server-send-data", data+"777");
+        //io.sockets.emit("Server-send-data", data+"777");
+
+        /**
+         * Client send data to server and server only send data to that client
+         */
+        socket.emit("Server-send-data", data+"222");
     });
 });
 
