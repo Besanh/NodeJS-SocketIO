@@ -33,7 +33,12 @@ io.on("connection", function(socket){
         /**
          * Client send data to server and server only send data to that client
          */
-        socket.emit("Server-send-data", data+"222");
+        //socket.emit("Server-send-data", data+"222");
+
+        /**
+         * Client send data to server and server send data to other client(don't send to that client)
+         */
+        socket.broadcast.emit("Server-send-data", data+333);
     });
 });
 
