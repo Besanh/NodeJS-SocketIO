@@ -1,0 +1,76 @@
+body
+{
+    background-color: #d9dde2;
+}
+
+/*
+ * Wrapper wrap all form
+ */
+#wrapper
+{
+    width: 600;
+    margin: auto;
+}
+
+/*
+ * Form input name
+ */
+#txtName
+{
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+/*
+ * Chat frame
+ */
+#left, #right
+{
+    min-height: 300;
+}
+#left
+{
+    width: 30%;
+    float: left;
+    background-color: #cedb97;
+}
+
+#right
+{
+    width: 70%;
+    float: right;
+    background-color: #c3e530;
+}
+
+#boxTitle
+{
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#boxContent
+{
+    border: 1px solid black;
+    border-top: none;
+    padding: 5px;
+    text-align: center;
+}
+
+#sayHi
+{
+    text-align: right;
+}
+
+#listMessage
+{
+    height: 200;
+    background-color: #eacce1;
+    margin-bottom: 15px;
+}
+
+#txtMessage
+{
+    background-color: transparent;
+}
