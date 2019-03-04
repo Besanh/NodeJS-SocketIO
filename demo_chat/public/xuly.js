@@ -9,10 +9,26 @@ socket.on("Server send register success", function(data){
     $("#chatForm").show(1000);
 });
 
+/**
+ * Listen to view users are online
+ * Refresh list user if client reload page
+ */
+socket.on("Server send list user", function(data){
+    $("#boxContent").html("");
+    data.forEach(function(i){
+        $("#boxContent").append("<div class='user'>" + i + "</div>");
+    });
+});
+
 $(document).ready(function(){
     $("#loginForm").show();
     $("#chatForm").hide();
     $("#btnRegister").click(function(){
         socket.emit("Client send username", $("#txtName").val());
+    });
+    $("#btnLogout").click(function(){
+        socket.emit("Log out");
+        $("#chatForm").hide(1000);
+        $("#loginForm").show(1000);
     });
 });
